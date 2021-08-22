@@ -1,0 +1,73 @@
+# Standard Configurations
+set ssl_force_tls   = yes
+set abort_nosubject = no
+set mail_check      = 60
+set timeout         = 60
+#set signature       = "~/.neomutt/signature"
+set copy            = no
+set editor          = vim 
+set menu_scroll     = yes
+
+# run a command whenever a new email comes
+set new_mail_command="./newEmail.sh %u"
+
+
+#set index_format='%?[1y?%[%d/%m/%Y]&%[%d/%m/%Y] %s?'
+
+set sidebar_visible                       
+set sidebar_short_path
+set sidebar_format      = "%B%* %?N?%N/?%S"
+set mail_check_stats
+
+
+bind index,pager B sidebar-toggle-visible # 'B' switchs the Sidebar on and off
+
+
+bind index,pager \Cp sidebar-prev # Ctrl-Shift-p – Previous Mailbox
+bind index,pager \Cn sidebar-next # Ctrl-Shift-N – Next Mailbox
+bind index,pager \Co sidebar-open # Ctrl-Shift-O – Open Highlighted Mailbox
+
+#set sidebar_width = 50 # Plenty of space
+
+# sort by threads and time
+set sort            = "threads"
+set sort_aux        = "reverse-date-received"
+set strict_threads  = yes
+
+# char encoding
+set send_charset="utf-8"
+
+# Cache
+set header_cache     = "~/.neomutt/cache/headers"
+set message_cachedir = "~/.neomutt/cache/bodies"
+
+# Colours
+source ~/.neomutt/colours
+
+# gmail account
+set from     = "myemail@gmail.com"
+set realname = "My Name"
+
+set imap_user = "myemail@gmail.com"
+set smtp_url  = "smtps://myemail@smtp.gmail.com"
+
+# these two parameters are the password.
+# Leave them empty or leave them on an encrypted
+# file and decrypt it whenever neomutt runs
+set smtp_pass="XXXXXXX"
+set imap_pass="XXXXXXX"
+# decrypt password files
+source "gpg -d ~/.neomutt/pass.gpg |"
+
+# Remote gmail folders
+set folder    = "imaps://imap.gmail.com/"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set record    = "+[Gmail]/E-mails enviados"
+set trash     = "+[Gmail]/Lixeira"
+
+# Monitore incoming emails 
+source ~/.neomutt/mailboxes
+
+# aliases
+source ~/.neomutt/aliases

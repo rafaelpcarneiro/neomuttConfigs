@@ -1,0 +1,35 @@
+################################################################################
+#                          Colour settings for mutt.
+################################################################################
+
+# standard color
+color indicator  black     green
+color hdrdefault color70   color234
+color header     color82   color234 "^From"
+color header     color248  color234 "^Subject"
+
+color normal	 white     black
+color quoted     color125  black       
+color quoted1    yellow    black     
+color quoted2    red       black    
+color tree	     red       black
+
+color status	 color243  color233
+color signature  cyan      black
+color tilde	     blue      black
+
+# identifies URLs
+color body	brightblue black (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+
+# colour definitions for the index - the first screen when you open neomutt
+color index_date    red      black
+color index_author  color21  black    ~A
+color index_subject color245 black    ~A
+color index_number  color240 color233
+
+
+# Sidebars
+color sidebar_indicator color10 color17  # green / Dark blue background
+color sidebar_highlight white   color238 # Grey background
+color sidebar_new       yellow  black
+color sidebar_divider   color8  black
